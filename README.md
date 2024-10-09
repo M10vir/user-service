@@ -20,3 +20,15 @@ If you want to learn more about creating good readme files then refer the follow
 - [Chakra Core](https://github.com/Microsoft/ChakraCore)
 
 # Testing Repo Sync with DevOps/GitHub at same time
+
+# Basic Structure Example for a Node.js Microservice:
+
+/user-service
+  ├── Dockerfile
+  ├── package.json
+  ├── index.js (main app file)
+  ├── src/
+  │   └── app.js (app logic)
+  └── test/
+      └── test.js (unit tests)
+
