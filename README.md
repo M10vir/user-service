@@ -1,7 +1,7 @@
-<<<<<<< HEAD
 # user-service
-Microservices-CI-CD-Project
-=======
+
+This is the README for the user service, now merged with Azure DevOps repository for Microservices-CI-CD-Project.
+
 # Introduction 
 TODO: Give a short introduction of your project. Let this section explain the objectives or the motivation behind this project. 
 
@@ -21,6 +21,7 @@ TODO: Explain how other users and developers can contribute to make your code be
 If you want to learn more about creating good readme files then refer the following [guidelines](https://docs.microsoft.com/en-us/azure/devops/repos/git/create-a-readme?view=azure-devops). You can also seek inspiration from the below readme files:
 - [ASP.NET Core](https://github.com/aspnet/Home)
 - [Visual Studio Code](https://github.com/Microsoft/vscode)
+<<<<<<< HEAD
 - [Chakra Core](https://github.com/Microsoft/ChakraCore)
 
 # Testing Repo Sync with DevOps/GitHub at same time
@@ -75,6 +76,3 @@ index.js: The main entry point of the microservice.
 src/app.js: Contains core logic for handling routes and business logic.
 test/test.js: Contains test cases to ensure the microservice works as expected.
 README.md: Provides documentation for the service.
-
-
->>>>>>> 7ece9edd8e0c655d129c493ed92523ef4b9b0c44
