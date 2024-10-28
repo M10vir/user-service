@@ -5,7 +5,12 @@ const PORT = process.env.PORT || 3000;
 // Middleware to parse JSON
 app.use(express.json());
 
-// Routes
+// Health check route
+app.get('/health', (req, res) => {
+  res.status(200).send('Service is healthy!');
+});
+
+// Root route
 app.get('/', (req, res) => {
   res.send('Welcome to User Service!');
 });
