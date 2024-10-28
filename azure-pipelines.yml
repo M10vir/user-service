@@ -1,0 +1,27 @@
+trigger:
+  branches:
+    include:
+      - main  # Trigger on new commits to the main branch
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+variables:
+  acrName: 'ACRMicroservices1'
+  imageName: 'user-service'
+
+steps:
+- task: AzureCLI@2
+  inputs:
+    azureSubscription: '<your-service-connection-name>'
+    scriptType: 'bash'
+    scriptLocation: 'inlineScript'
+    inlineScript: |
+      # Log in to ACR
+      az acr login --name $(acrName)
+
+      # Build and push the Docker image to ACR
+      az acr build --registry $(acrName) --image $(imageName):$(Build.BuildId) --file Dockerfile .
+
+      echo "Docker image built and pushed to ACR: $(imageName):$(Build.BuildId)"
+
