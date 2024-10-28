@@ -7,6 +7,11 @@ const users = [
   { id: 2, name: 'Jane Smith' }
 ];
 
+// Health check route
+router.get('/health', (req, res) => {
+  res.status(200).send('Service is healthy!');
+});
+
 // Get all users
 router.get('/', (req, res) => {
   res.json(users);
@@ -20,3 +25,4 @@ router.get('/:id', (req, res) => {
 });
 
 module.exports = router;
+
