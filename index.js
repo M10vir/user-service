@@ -12,7 +12,7 @@ app.get('/health', (req, res) => {
 
 // Root route
 app.get('/', (req, res) => {
-  res.send('Welcome to User Service!');
+  res.send('Welcome to User Service! Part - 2');
 });
 
 // Import the app logic from src/app.js
