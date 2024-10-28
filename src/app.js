@@ -3,9 +3,9 @@ const router = express.Router();
 
 // In-memory user data (for simplicity)
 const users = [
-  { id: 1, name: 'Zeydan Zeydu' },
-  { id: 2, name: 'Humdan Humdu' },
-  { id: 3, name: 'Jehan Jeje' }
+  { id: 1, name: 'New User 1' },
+  { id: 2, name: 'New User 2' },
+  { id: 3, name: 'New User 3' }
 ];
 
 // Health check route
