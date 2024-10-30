@@ -1,11 +1,12 @@
+// src/app.js
 const express = require('express');
 const router = express.Router();
 
-// In-memory user data (for simplicity)
+// Updated user data
 const users = [
-  { id: 1, name: 'Zeydan User 1' },
-  { id: 2, name: 'Humdan User 2' },
-  { id: 3, name: 'Jehan User 3' }
+  { id: 1, name: 'Updated User 1' },
+  { id: 2, name: 'Updated User 2' },
+  { id: 3, name: 'Updated User 3' }
 ];
 
 // Health check route
