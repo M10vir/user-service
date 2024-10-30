@@ -1,39 +1,20 @@
-trigger:
-  branches:
-    include:
-      - main
-
-pool:
-  vmImage: 'ubuntu-latest'
-
 variables:
   ACR_NAME: 'acrmicroservices1'
   IMAGE_NAME: 'user-service'
+  SERVICE_CONNECTION: 'MCICD_ASC'  # Ensure the name matches exactly
 
 stages:
-- stage: Build
+- stage: BuildAndPush
   jobs:
-  - job: BuildPush
+  - job: BuildPushImage
+    displayName: 'Build and Push Docker Image'
     steps:
     - task: Docker@2
       inputs:
-        containerRegistry: '$(ACR_NAME)'
-        repository: '$(IMAGE_NAME)'
+        containerRegistry: $(SERVICE_CONNECTION)  # Reference service connection here
+        repository: $(IMAGE_NAME)
         command: 'buildAndPush'
         Dockerfile: '**/Dockerfile'
         tags: |
           latest
-
-- stage: Deploy
-  dependsOn: Build
-  jobs:
-  - job: DeployToAKS
-    steps:
-    - script: |
-        az aks get-credentials --resource-group Microservices-CI-CD-RG --name MicroservicesAKSCluster
-      displayName: 'Set AKS Credentials'
-      
-    - script: |
-        kubectl set image deployment/user-service-deployment user-service=$(ACR_NAME).azurecr.io/$(IMAGE_NAME):latest
-      displayName: 'Deploy to AKS'
 
