@@ -1,6 +1,6 @@
 # user-service
 
-This is the README for the user service, now merged with Azure DevOps repository for Microservices-CI-CD-Project.
+This is the README v01 for the user service, now merged with Azure DevOps repository for Microservices-CI-CD-Project.
 
 # Introduction 
 TODO: Give a short introduction of your project. Let this section explain the objectives or the motivation behind this project. 
